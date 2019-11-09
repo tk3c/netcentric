@@ -1,3 +1,33 @@
+# Syntax for task 1
+
+node '<ivo-node>' {
+
+  class{"nginx":
+    manage_repo => true,
+    package_source => 'nginx-mainline'
+
+}
+
+  nginx::resource::server{'void.<ivo-node>':
+    www_root => '/opt/html/',
+    use_default_location => false,
+  }
+
+  nginx::resource::location{'/':
+    proxy => 'http://10.10.10.10/' ,
+    server => 'void.<ivo-node>',
+  }
+
+  nginx::resource::location{'/resoure2':
+    proxy => 'http://20.20.20.20/' ,
+    server => 'void.<ivo-node>',
+  }
+
+}
+
+
+
+
 # NGINX module for Puppet
 
 [![Build Status](https://travis-ci.org/voxpupuli/puppet-nginx.png?branch=master)](https://travis-ci.org/voxpupuli/puppet-nginx)
