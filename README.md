@@ -1,5 +1,5 @@
 # Syntax for task 1
-
+```puppet
 node '<ivo-node>' {
 
   class{"nginx":
@@ -24,7 +24,7 @@ node '<ivo-node>' {
   }
 
 }
-
+```
 
 
 
