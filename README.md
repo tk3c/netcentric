@@ -14,12 +14,12 @@ node '<ivo-node>' {
   }
 
   nginx::resource::location{'/':
-    proxy => 'http://10.10.10.10/' ,
+    proxy => 'https://10.10.10.10/' ,
     server => 'void.<ivo-node>',
   }
 
   nginx::resource::location{'/resoure2':
-    proxy => 'http://20.20.20.20/' ,
+    proxy => 'https://20.20.20.20/' ,
     server => 'void.<ivo-node>',
   }
 
